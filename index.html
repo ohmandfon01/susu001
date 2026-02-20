@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Quiz Game</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f4f4f4;
+        padding: 50px;
+    }
+    .container {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        max-width: 500px;
+        margin: auto;
+    }
+    button {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .correct { background-color: #4CAF50; color: white; }
+    .wrong { background-color: #f44336; color: white; }
+    .option { background-color: #2196F3; color: white; }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>คำถาม:</h2>
+    <p>ภูมิปัญญาท้องถิ่นแม่ลานเกี่ยวข้องกับอะไร?</p>
+
+    <button class="option" onclick="checkAnswer('A')">A. การประมง</button>
+    <button class="option" onclick="checkAnswer('B')">B. งานหัตถกรรม</button>
+    <button class="option" onclick="checkAnswer('C')">C. อุตสาหกรรมหนัก</button>
+
+    <h3 id="result"></h3>
+</div>
+
+<script>
+function checkAnswer(answer) {
+    const result = document.getElementById("result");
+    if (answer === "B") {
+        result.innerHTML = "✅ ถูกต้อง!";
+        result.style.color = "green";
+    } else {
+        result.innerHTML = "❌ ยังไม่ถูก ลองใหม่!";
+        result.style.color = "red";
+    }
+}
+</script>
+
+</body>
+</html>
